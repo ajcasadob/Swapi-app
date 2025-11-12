@@ -1,1 +1,27 @@
-<p>vehiculo-list-page works!</p>
+<div class="container my-4">
+    <h1 class="text-center mb-4">Star Wars Vehículos</h1>
+
+    <div class="row g-3">
+        @for (v of listaVehiculos; track v.url) {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">{{ v.name }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted mb-3">{{ v.model }} — {{ v.manufacturer }}</p>
+                        
+                        <p class="mb-1"><strong>Clase:</strong> {{ v.vehicle_class }}</p>
+                        <p class="mb-1"><strong>Tripulación:</strong> {{ v.crew }}</p>
+                        <p class="mb-1"><strong>Pasajeros:</strong> {{ v.passengers }}</p>
+                        <p class="mb-3"><strong>Coste:</strong> {{ v.cost_in_credits }}</p>
+                        
+                        <a [routerLink]="['/vehiculo-details', v.url.split('/')[5]]" class="btn btn-primary w-100">
+                            Ver detalles
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
