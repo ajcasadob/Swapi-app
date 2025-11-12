@@ -1,1 +1,29 @@
-<p>personaje-list-page works!</p>
+<div class="container mt-4">
+    <div class="row g-4">
+        @for (personaje of listaPersonaje ; track personaje.name) {
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{{personaje.name}}</h5>
+                    <div class="card-text">
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-person"></i> <strong>Género:</strong> {{personaje.gender}}</li>
+                            <li><i class="bi bi-calendar"></i> <strong>Nacimiento:</strong> {{personaje.birth_year}}
+                            </li>
+                            <li><i class="bi bi-eye"></i> <strong>Color de ojos:</strong> {{personaje.eye_color}}</li>
+                            <li><i class="bi bi-rulers"></i> <strong>Altura:</strong> {{personaje.height}} cm</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 text-end">
+                        <div class="d-grid gap-2 d-md-block">
+                            <button class="btn btn-primary" type="button" (click)="verDetalles(personaje)">
+                                Ver más
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
