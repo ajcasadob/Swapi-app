@@ -1,0 +1,22 @@
+@if (person) {
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{ person.name }}</h2>
+            <ul class="list-unstyled">
+                <li><strong>Género:</strong> {{ person.gender }}</li>
+                <li><strong>Nacimiento:</strong> {{ person.birth_year }}</li>
+                <li><strong>Color de ojos:</strong> {{ person.eye_color }}</li>
+                <li><strong>Altura:</strong> {{ person.height }} cm</li>
+                <li><strong>Peso:</strong> {{ person.mass }} kg</li>
+                <li><strong>Color de piel:</strong> {{ person.skin_color }}</li>
+                <li><strong>Color de pelo:</strong> {{ person.hair_color }}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+} @else {
+<div class="container mt-4">
+    <p>Cargando...</p>
+</div>
+}
